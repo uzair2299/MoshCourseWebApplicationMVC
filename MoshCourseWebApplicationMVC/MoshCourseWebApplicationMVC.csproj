@@ -196,6 +196,14 @@
     <Compile Include="Migrations\202008201840257_FKKeysToGigs.Designer.cs">
       <DependentUpon>202008201840257_FKKeysToGigs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008210849102_extendUserClass.cs" />
+    <Compile Include="Migrations\202008210849102_extendUserClass.Designer.cs">
+      <DependentUpon>202008210849102_extendUserClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008210851278_dataannotation.cs" />
+    <Compile Include="Migrations\202008210851278_dataannotation.Designer.cs">
+      <DependentUpon>202008210851278_dataannotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -399,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008201840257_FKKeysToGigs.resx">
       <DependentUpon>202008201840257_FKKeysToGigs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008210849102_extendUserClass.resx">
+      <DependentUpon>202008210849102_extendUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008210851278_dataannotation.resx">
+      <DependentUpon>202008210851278_dataannotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
