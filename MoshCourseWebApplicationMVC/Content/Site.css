@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +22,39 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/*
+    bootstrap overrides
+*/
+
+.bg-light {
+    background-color: #ff4342 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+    .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+        color: #fff;
+    }
+
+.navbar-light .navbar-brand {
+    color: #fff;
+}
+
+    .navbar-light .navbar-brand:hover{
+        color: #fff;
+    }
+
+    .navbar-light .navbar-brand:hover{
+        color: #fff;
+    }
+
+.field-validation-error {
+    color: red;
+    font-weight: 700;
+
+}
+

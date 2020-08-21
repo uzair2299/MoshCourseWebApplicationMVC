@@ -6,8 +6,10 @@ namespace MoshCourseWebApplicationMVC.Models
     public class Gig
     {
         public int Id { get; set; }
-        
         [Required]
+        public string ArtistId { get; set; }
+        
+       
         public ApplicationUser Artist { get; set; }
         
         public DateTime DateTime { get; set; }
@@ -17,6 +19,7 @@ namespace MoshCourseWebApplicationMVC.Models
         public string Venue { get; set; }
         
         [Required]
+        public byte GenreId { get; set; }
         public Genre Genre { get; set; }
 
     }
