@@ -1,9 +1,9 @@
-﻿@model IEnumerable<MoshCourseWebApplicationMVC.Models.Gig>
-@{
-    ViewBag.Title = "Home Page";
+﻿@model MoshCourseWebApplicationMVC.ViewModel.GigsViewModel
+   @{ ViewBag.Title = "Home Page";
 }
+<h1>@Model.Heading</h1>
 <ul class="gigs mt-5">
-    @foreach(var gig in Model)
+    @foreach(var gig in Model.UpComingGigs)
     {
     <li>
         <div class="date">
@@ -16,12 +16,18 @@
         </div>
         <div class="details">
             <span class="artist">
-                @gig.Artist.Name
+                @gig.Artist.Name @if (Model.ShowAction)
+                {
+                    <button class="btn btn-link btn-sm js-follow ml-3" data-user-id="@gig.ArtistId">Follow</button>
+                    }
             </span>
             <span class="genre">
                 @gig.Genre.Name
             </span>
-            <button class="btn btn-light btn-sm mr-5 js-attendance" style=" border-radius: 9px; font-size: 12px; padding: 7px 10px" data-gig-id="@gig.Id" >Going ?</button>
+            @if (Model.ShowAction)
+            {
+                <button class="btn btn-light btn-sm mr-5 js-attendance" style=" border-radius: 9px; font-size: 12px; padding: 7px 10px" data-gig-id="@gig.Id">Going ?</button>
+            }
         </div>
     </li>
     }
@@ -36,6 +42,16 @@
                        btn.removeClass("btn-light").
                            addClass("btn-info").
                            text("Going");
+                   }).fail(function () {
+                       alert("something fail");
+                   })
+           });
+
+           $(".js-follow").click(function (e) {
+               var btn = $(e.target)
+               $.post("/api/Following", { FolloweeId: btn.attr("data-user-id") })
+                   .done(function () {
+                       btn.text("Following");
                    }).fail(function () {
                        alert("something fail");
                    })

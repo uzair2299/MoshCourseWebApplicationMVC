@@ -95,6 +95,7 @@ textarea {
     position: absolute;
     top :0px;
     left:70px;
+    display:block;
 }
 
     .gigs > li .details .artist {
@@ -104,4 +105,11 @@ textarea {
 
     .gigs > li .details .genre {
         font-size:12px;
+    }
+
+    .gigs > li .actions{
+        display:none
+    }
+    .gigs :hover .actions {
+        display: block
     }

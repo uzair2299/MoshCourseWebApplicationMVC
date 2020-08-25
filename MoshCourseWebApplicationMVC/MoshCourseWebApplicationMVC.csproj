@@ -181,6 +181,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Controllers\FollowingDTO.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -219,10 +221,23 @@
     <Compile Include="Migrations\202008211340085_calander.Designer.cs">
       <DependentUpon>202008211340085_calander.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008211721000_following.cs" />
+    <Compile Include="Migrations\202008211721000_following.Designer.cs">
+      <DependentUpon>202008211721000_following.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008211806547_follow.cs" />
+    <Compile Include="Migrations\202008211806547_follow.Designer.cs">
+      <DependentUpon>202008211806547_follow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008220459049_newFollowing.cs" />
+    <Compile Include="Migrations\202008220459049_newFollowing.Designer.cs">
+      <DependentUpon>202008220459049_newFollowing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -231,6 +246,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\FutureDate.cs" />
     <Compile Include="ViewModel\GigFormViewModel.cs" />
+    <Compile Include="ViewModel\GigsViewModel.cs" />
     <Compile Include="ViewModel\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -361,7 +377,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Gigs.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -392,7 +408,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Gigs\GigForm.cshtml" />
+    <Content Include="Views\Gigs\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -433,6 +450,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008211340085_calander.resx">
       <DependentUpon>202008211340085_calander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008211721000_following.resx">
+      <DependentUpon>202008211721000_following.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008211806547_follow.resx">
+      <DependentUpon>202008211806547_follow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008220459049_newFollowing.resx">
+      <DependentUpon>202008220459049_newFollowing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

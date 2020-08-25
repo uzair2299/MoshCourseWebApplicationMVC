@@ -1,14 +1,15 @@
 ﻿@model MoshCourseWebApplicationMVC.ViewModel.GigFormViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Model.Heading;
 }
 
-<h2 class="mt-4">Create</h2>
+<h2 class="mt-4">@Model.Heading</h2>
 
-@using (Html.BeginForm("Create", "Gigs", FormMethod.Post))
+@using (Html.BeginForm(Model.Action, "Gigs", FormMethod.Post))
 {
     <p class="alert alert-info">All fields are <strong> required</strong></p>
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(m=>m.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Venue)
         @Html.TextBoxFor(m => m.Venue, new { @class = "form-control",autofocus="autofocus" })
