@@ -23,11 +23,56 @@
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
-            <div class="actions">
-                <a href="@Url.Action("Edit","Gigs",new { id=gig.Id})">Edit</a>
-            </div>
+                <div class="actions">
+                    <a href="@Url.Action("Edit","Gigs",new { id=gig.Id})">Edit</a> |
+                    <a href="#" class="js-cancel" data-gig-id="@gig.Id">Cancel</a>
+                </div>
             </div>
         </li>
     }
 </ul>
+@section scripts{
+<script>
+    $(document).ready(function () {
+        $(".js-cancel").click(function (e) {
+            var link = $(e.target);
 
+            var dialog = bootbox.dialog({
+                title: 'Confirm',
+                message: "<p>Are You Sure You Want To Cancel This Gig</p>",
+                size: 'large',
+                buttons: {
+                    no: {
+                        label: "No",
+                        className: 'btn-default',
+                        callback: function () {
+                            bootbox.hideAll();
+                        }
+                    },
+                    Yes: {
+                        label: "Yes",
+                        className: 'btn-danger',
+                        callback: function () {
+                            $.ajax(
+                                {
+                                    url: "/api/Gigs/" + link.attr("data-gig-id"),
+                                    method: "DELETE"
+                                }).done(function () {
+                                    link.parents("li").fadeOut(function () {
+                                        $(this).remove();
+                                    });
+                                }).fail(function () {
+                                    alert("Something fail" + link.attr("data-gig-id"))
+                                });
+
+
+                        }
+                    }
+                }
+            });
+
+         
+        });
+    });
+    </script>
+    }

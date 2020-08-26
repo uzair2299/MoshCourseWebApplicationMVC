@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace MoshCourseWebApplicationMVC.Controllers
+namespace MoshCourseWebApplicationMVC.Controllers.api
 {
     public class AttendancesController : ApiController
     {

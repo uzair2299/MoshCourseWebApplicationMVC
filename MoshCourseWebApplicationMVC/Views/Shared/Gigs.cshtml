@@ -16,15 +16,20 @@
         </div>
         <div class="details">
             <span class="artist">
-                @gig.Artist.Name @if (Model.ShowAction)
+                @gig.Artist.Name
+                @if (gig.IsCanceled)
+                {
+                    <span class="badge badge-warning">Canceled</span>
+                }
+                @if (Model.ShowAction)
                 {
                     <button class="btn btn-link btn-sm js-follow ml-3" data-user-id="@gig.ArtistId">Follow</button>
-                    }
+                }
             </span>
             <span class="genre">
                 @gig.Genre.Name
             </span>
-            @if (Model.ShowAction)
+            @if (Model.ShowAction && gig.IsCanceled == false)
             {
                 <button class="btn btn-light btn-sm mr-5 js-attendance" style=" border-radius: 9px; font-size: 12px; padding: 7px 10px" data-gig-id="@gig.Id">Going ?</button>
             }

@@ -180,8 +180,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
-    <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Controllers\api\GigsController.cs" />
+    <Compile Include="Controllers\api\AttendancesController.cs" />
+    <Compile Include="Controllers\api\FollowingController.cs" />
     <Compile Include="Controllers\FollowingDTO.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -233,6 +234,10 @@
     <Compile Include="Migrations\202008220459049_newFollowing.Designer.cs">
       <DependentUpon>202008220459049_newFollowing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008260758496_IsCanceled.cs" />
+    <Compile Include="Migrations\202008260758496_IsCanceled.Designer.cs">
+      <DependentUpon>202008260758496_IsCanceled.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -259,6 +264,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -413,7 +419,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\api\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -459,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008220459049_newFollowing.resx">
       <DependentUpon>202008220459049_newFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008260758496_IsCanceled.resx">
+      <DependentUpon>202008260758496_IsCanceled.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
